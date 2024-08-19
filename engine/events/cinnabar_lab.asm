@@ -1,6 +1,6 @@
 GiveFossilToCinnabarLab::
-	ld hl, wd730
-	set 6, [hl]
+	ld hl, wStatusFlags5
+	set BIT_NO_TEXT_DELAY, [hl]
 	xor a
 	ld [wCurrentMenuItem], a
 	ld a, A_BUTTON | B_BUTTON
@@ -24,8 +24,8 @@ GiveFossilToCinnabarLab::
 	call TextBoxBorder
 	call UpdateSprites
 	call PrintFossilsInBag
-	ld hl, wd730
-	res 6, [hl]
+	ld hl, wStatusFlags5
+	res BIT_NO_TEXT_DELAY, [hl]
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	jr nz, .cancelledGivingFossil
@@ -104,7 +104,7 @@ PrintFossilsInBag:
 	ldh a, [hItemCounter]
 	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
-	ld de, wcd6d
+	ld de, wNameBuffer
 	call PlaceString
 	ld hl, hItemCounter
 	inc [hl]

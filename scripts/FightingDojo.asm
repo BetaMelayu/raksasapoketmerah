@@ -111,9 +111,9 @@ FightingDojoKarateMasterText:
 	jp nz, .defeated_master
 	ld hl, .Text
 	call PrintText
-	ld hl, wd72d
-	set 6, [hl]
-	set 7, [hl]
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
 	ld hl, .DefeatedText
 	ld de, .DefeatedText
 	call SaveEndBattleTextPointers
@@ -239,7 +239,7 @@ FightingDojoHitmonleePokeBallText:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .done
-	ld a, [wcf91]
+	ld a, [wCurPartySpecies]
 	ld b, a
 	ld c, 30
 	call GivePokemon
@@ -273,7 +273,7 @@ FightingDojoHitmonchanPokeBallText:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .done
-	ld a, [wcf91]
+	ld a, [wCurPartySpecies]
 	ld b, a
 	ld c, 30
 	call GivePokemon

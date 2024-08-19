@@ -41,8 +41,8 @@ CeladonMartRoofDrinkList:
 	db 0 ; end
 
 CeladonMartRoofScript_GiveDrinkToGirl:
-	ld hl, wd730
-	set 6, [hl]
+	ld hl, wStatusFlags5
+	set BIT_NO_TEXT_DELAY, [hl]
 	ld hl, CeladonMartRoofLittleGirlGiveHerWhichDrinkText
 	call PrintText
 	xor a
@@ -68,8 +68,8 @@ CeladonMartRoofScript_GiveDrinkToGirl:
 	call TextBoxBorder
 	call UpdateSprites
 	call CeladonMartRoofScript_PrintDrinksInBag
-	ld hl, wd730
-	res 6, [hl]
+	ld hl, wStatusFlags5
+	res BIT_NO_TEXT_DELAY, [hl]
 	call HandleMenuInput
 	bit BIT_B_BUTTON, a
 	ret nz
@@ -198,7 +198,7 @@ CeladonMartRoofScript_PrintDrinksInBag:
 	ldh a, [hItemCounter]
 	ld bc, SCREEN_WIDTH * 2
 	call AddNTimes
-	ld de, wcd6d
+	ld de, wNameBuffer
 	call PlaceString
 	ld hl, hItemCounter
 	inc [hl]
