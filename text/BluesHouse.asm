@@ -1,42 +1,42 @@
 _BluesHouseDaisyRivalAtLabText::
 	text "Hi <PLAYER>!"
-	line "<RIVAL> is out at"
-	cont "Grandpa's lab."
+	line "<RIVAL> sekarang"
+	cont "di makmal Atuk."
 	done
 
 _BluesHouseDaisyOfferMapText::
-	text "Grandpa asked you"
-	line "to run an errand?"
-	cont "Here, this will"
-	cont "help you!"
+	text "Atuk menyuruhmu"
+	line "buat tugasan?"
+	cont "Ini mungkin"
+	cont "membantumu."
 	prompt
 
 _GotMapText::
-	text "<PLAYER> got a"
+	text "<PLAYER> dapat"
 	line "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
 _BluesHouseDaisyBagFullText::
-	text "You have too much"
-	line "stuff with you."
+	text "Beg kamu"
+	line "terlalu penuh."
 	done
 
 _BluesHouseDaisyUseMapText::
-	text "Use the TOWN MAP"
-	line "to find out where"
-	cont "you are."
+	text "Gunakan PETA ini"
+	line "untuk mencari"
+	cont "mana mu berada."
 	done
 
 _BluesHouseDaisyWalkingText::
-	text "#MON are living"
-	line "things! If they"
-	cont "get tired, give"
-	cont "them a rest!"
+	text "#MON adalah benda"
+	line "hidup! Jika"
+	cont "mereka penat, bagi"
+	cont "mereka rehat!"
 	done
 
 _BluesHouseTownMapText::
-	text "It's a big map!"
-	line "This is useful!"
+	text "Peta ini besar!"
+	line "Ini amat membantu!"
 	done
